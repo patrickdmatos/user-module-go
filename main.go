@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/patrick/user-module-go/internal/database"
 	"github.com/patrick/user-module-go/internal/handlers"
@@ -22,6 +24,12 @@ func main() {
 	// Rota protegida
 	app.Get("/userInfos", middleware.Protect(), handlers.GetUserInfos)
 
-	// Iniciar o servidor
-	app.Listen(":3000")
+		// Obtenha a porta da variável de ambiente ou defina uma padrão
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000" // Usando a porta 3000 como fallback se a variável não estiver definida
+	}
+
+	// Iniciar o servidor na porta fornecida
+	app.Listen(":" + port)
 }
