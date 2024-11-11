@@ -1,20 +1,27 @@
 package main
 
 import (
-	"user-module/internal/database"
-	"user-module/internal/handlers"
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/patrick/user-module-go/internal/database"
+	"github.com/patrick/user-module-go/internal/handlers"
+	"github.com/patrick/user-module-go/internal/middleware"
+	"github.com/patrick/user-module-go/internal/models"
 )
 
 func main() {
-    app := fiber.New()
+	app := fiber.New()
 
-    database.ConnectDatabase()
-    database.Migrate() // Realiza a migração do modelo
+	// Conectar ao banco de dados
+	database.ConnectDatabase()
+	database.DB.AutoMigrate(&models.User{})
 
-    app.Post("/api/users/register", handlers.RegisterUser)
-    // Adicione mais rotas conforme necessário
+	// Rotas públicas
+	app.Post("/register", handlers.RegisterUser)
+	app.Post("/login", handlers.Login)
 
-    app.Listen(":3000")
+	// Rota protegida
+	app.Get("/userInfos", middleware.Protect(), handlers.GetUserInfos)
+
+	// Iniciar o servidor
+	app.Listen(":3000")
 }
