@@ -17,7 +17,7 @@ WORKDIR /app
 COPY --from=builder /app/main .
 
 # Expor a porta (ajuste para a porta que o seu serviço usa)
-EXPOSE 8080
+EXPOSE 3000
 
 # Executar o binário
 CMD ["./main"]
