@@ -20,6 +20,9 @@ func main() {
 	}
 
 	// Rotas públicas
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.JSON("Hello World, lets GO!")
+	})
 	app.Post("/register", handlers.RegisterUser)
 	app.Post("/login", handlers.Login)
 
