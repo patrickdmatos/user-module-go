@@ -1,21 +1,23 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/patrick/user-module-go/internal/database"
 	"github.com/patrick/user-module-go/internal/handlers"
 	"github.com/patrick/user-module-go/internal/middleware"
-	"github.com/patrick/user-module-go/internal/models"
 )
 
 func main() {
 	app := fiber.New()
 
 	// Conectar ao banco de dados
-	database.ConnectDatabase()
-	database.DB.AutoMigrate(&models.User{})
+	_, err := database.ConnectToDatabase()
+	if err != nil {
+		fmt.Println("Não foi possível conectar ao banco de dados: %v", err)
+	}
 
 	// Rotas públicas
 	app.Post("/register", handlers.RegisterUser)
