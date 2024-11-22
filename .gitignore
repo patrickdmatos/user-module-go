@@ -20,7 +20,7 @@ Thumbs.db
 *.swp
 
 # Variáveis de ambiente
-.env
+# .env
 
 # Logs de testes e cobertura
 coverage.out
