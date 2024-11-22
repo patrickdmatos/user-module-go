@@ -23,7 +23,6 @@ This project uses the following dependencies:
 ### Setup
 Clone the repository:
 
-git clone https://github.com/yourusername/user-module-go.git
 cd user-module-go
 Install dependencies:
 
