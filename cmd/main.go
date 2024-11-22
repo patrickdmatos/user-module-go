@@ -30,10 +30,13 @@ func main() {
 	app.Get("/userInfos", middleware.Protect(), handlers.GetUserInfos)
 
 	// Obtenha a porta da variável de ambiente ou defina uma padrão
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "3000" // Usando a porta 3000 como fallback se a variável não estiver definida
-	}
+	 port := os.Getenv("PORT")
+    if port == "" {
+        fmt.Println("Erro: A variável PORT não foi configurada!")
+        os.Exit(1)
+    }
+
+    fmt.Printf("A API está rodando na porta: %s\n", port)
 
 	// Iniciar o servidor na porta fornecida e garantir que ele ouça em todas as interfaces (0.0.0.0)
 	if err := app.Listen("0.0.0.0:" + port); err != nil {
