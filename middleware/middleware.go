@@ -43,6 +43,7 @@ func Protect() fiber.Handler {
 
 		// Atribui os dados do usuário no contexto (opcional)
 		c.Locals("email", claims.Email)
+		c.Locals("user_id", claims.Id)
 
 		return c.Next()
 	}
