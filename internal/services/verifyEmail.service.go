@@ -1,6 +1,8 @@
 package services
 
 import (
+	"fmt"
+
 	"github.com/patrick/user-module-go/internal/database"
 	"github.com/patrick/user-module-go/internal/models"
 )
@@ -9,6 +11,7 @@ import (
 func IsEmailTaken(email string) (bool, error) {
 	var user models.User
 	err := database.DB.Where("email = ?", email).First(&user).Error
+	fmt.Println(err)
 	if err != nil {
 		if err.Error() == "record not found" {
 			return false, nil // Não encontrou o usuário, então o email não está registrado

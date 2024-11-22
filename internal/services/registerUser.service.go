@@ -9,7 +9,7 @@ import (
 )
 
 //Registra um novo usuario na base
-func RegisterUser(name, email, password string) error {
+func RegisterUser(username, name, email, password string) error {
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
 		return err
@@ -27,6 +27,7 @@ func RegisterUser(name, email, password string) error {
 
 	user := models.User{
 		Name:     name,
+		Username: username,
 		Email:    email,
 		Password: string(hashedPassword),
 	}

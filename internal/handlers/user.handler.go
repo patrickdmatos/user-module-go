@@ -9,6 +9,7 @@ import (
 func RegisterUser(c *fiber.Ctx) error {
 	var body struct {
 		Name     string `json:"name"`
+		Username string `json:"username"`
 		Email    string `json:"email"`
 		Password string `json:"password"`
 	}
@@ -21,7 +22,7 @@ func RegisterUser(c *fiber.Ctx) error {
 	}
 
 	// Tenta registrar o usuário
-	err := services.RegisterUser(body.Name, body.Email, body.Password)
+	err := services.RegisterUser(body.Username, body.Name, body.Email, body.Password)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"error": "Email already registered, please try to login",

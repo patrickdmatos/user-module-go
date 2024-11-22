@@ -23,12 +23,8 @@ func ConnectToDatabase() (*gorm.DB, error) {
 	host := os.Getenv("POSTGRES_HOST")
 	user := os.Getenv("POSTGRES_USER")
 	password := os.Getenv("POSTGRES_PASSWORD")
+	dbname := os.Getenv("POSTGRES_DATABASE")
 	port := os.Getenv("POSTGRES_PORT")
-	
-	// Debug: exibe os valores das variáveis
-	fmt.Println("POSTGRES_USER:", user)
-	fmt.Println("POSTGRES_PASSWORD:", password)
-	fmt.Println("POSTGRES_PORT:", port)
 
 	// Verifique se as variáveis estão vazias
 	if user == "" || password == "" || port == "" {
@@ -36,7 +32,7 @@ func ConnectToDatabase() (*gorm.DB, error) {
 	}
 
 	// Cria o DSN com variáveis de ambiente
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=postgres port=%s sslmode=disable search_path=local_dev", host, user, password, port)
+	dsn := fmt.Sprintf("postgresql://%s:%s@%s.oregon-postgres.render.com/%s", user, password, host, dbname)
 
 	// Conecta ao banco de dados
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
