@@ -3,8 +3,8 @@ package services
 import (
 	"fmt"
 
-	"github.com/patrick/user-module-go/internal/database"
-	"github.com/patrick/user-module-go/internal/models"
+	"github.com/patrickdmatos/user-module-go/internal/database"
+	"github.com/patrickdmatos/user-module-go/internal/models"
 	"golang.org/x/crypto/bcrypt"
 )
 

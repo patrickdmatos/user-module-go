@@ -6,7 +6,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt"
-	"github.com/patrick/user-module-go/internal/services"
+	"github.com/patrickdmatos/user-module-go/internal/services"
 )
 
 var jwtKey = []byte("secrect_key") // Mesma chave secreta usada para gerar o token

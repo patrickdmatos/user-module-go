@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/patrick/user-module-go/internal/services"
+	"github.com/patrickdmatos/user-module-go/internal/services"
 )
 
 // Função de handler para registrar o usuário

@@ -5,9 +5,9 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/patrick/user-module-go/internal/database"
-	"github.com/patrick/user-module-go/internal/handlers"
-	"github.com/patrick/user-module-go/internal/middleware"
+	"github.com/patrickdmatos/user-module-go/internal/database"
+	"github.com/patrickdmatos/user-module-go/internal/handlers"
+	"github.com/patrickdmatos/user-module-go/internal/middleware"
 )
 
 func main() {
