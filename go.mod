@@ -1,4 +1,4 @@
-module github.com/patrick/user-module-go
+module github.com/patrickdmatos/user-module-go
 
 go 1.19
 
