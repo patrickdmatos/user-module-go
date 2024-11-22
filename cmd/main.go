@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/patrickdmatos/user-module-go/internal/database"
 	"github.com/patrickdmatos/user-module-go/internal/handlers"
-	"github.com/patrickdmatos/user-module-go/internal/middleware"
+	"github.com/patrickdmatos/user-module-go/middleware"
 )
 
 func main() {
