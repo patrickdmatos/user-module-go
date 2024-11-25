@@ -41,17 +41,9 @@ func Protect() fiber.Handler {
 			return c.Status(fiber.StatusUnauthorized).SendString("Token inválido")
 		}
 
-		// Debug: Verifica o valor de claims.Id
-		fmt.Println("Claim ID:", claims.Id)
-
-		// Verifica se o ID está vazio
-		if claims.Id == "" {
-			return c.Status(fiber.StatusUnauthorized).SendString("ID do usuário está vazio no token")
-		}
-
 		// Atribui os dados do usuário no contexto (opcional)
 		c.Locals("email", claims.Email)
-		c.Locals("user_id", claims.Id)
+		c.Locals("user_id", claims.ID)
 
 		return c.Next()
 	}

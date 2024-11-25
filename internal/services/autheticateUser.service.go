@@ -15,6 +15,7 @@ var jwtKey = []byte("secrect_key") // Chave secreta para assinar o token JWT
 
 type Claims struct {
 	Email string `json:"email"`
+	ID uint `json:"id"`
 	jwt.StandardClaims
 }
 
@@ -38,6 +39,7 @@ func AutenticateUser(email, password string) (string, error) {
 	expirationTime := time.Now().Add(24 * time.Hour) // Token expira em 24h
 	claims := &Claims{
 		Email: user.Email,
+		ID: user.ID,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(), // Converte para Unix timestamp
 			Issuer:    "user-module-go",
