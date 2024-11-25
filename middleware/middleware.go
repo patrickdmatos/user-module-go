@@ -41,10 +41,7 @@ func Protect() fiber.Handler {
 			return c.Status(fiber.StatusUnauthorized).SendString("Token inválido")
 		}
 
-		// Atribui os dados do usuário no contexto (opcional)
-		c.Locals("email", claims.Email)
-		c.Locals("id", claims.ID)
-
-		return c.Next()
+	
+		return c.JSON(claims)
 	}
 }
