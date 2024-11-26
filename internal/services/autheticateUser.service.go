@@ -16,6 +16,8 @@ var jwtKey = []byte("secrect_key") // Chave secreta para assinar o token JWT
 type Claims struct {
 	Email string `json:"email"`
 	ID uint `json:"id"`
+	Username string `json:"username"`
+	FullName string `jsno:"full_name"`
 	jwt.StandardClaims
 }
 
@@ -40,6 +42,8 @@ func AutenticateUser(email, password string) (string, error) {
 	claims := &Claims{
 		Email: user.Email,
 		ID: user.ID,
+		Username: user.Username,
+		FullName: user.Name,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(), // Converte para Unix timestamp
 			Issuer:    "user-module-go",
