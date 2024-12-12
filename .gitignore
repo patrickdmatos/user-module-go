@@ -25,3 +25,5 @@ Thumbs.db
 # Logs de testes e cobertura
 coverage.out
 test_results/
+
+tmp

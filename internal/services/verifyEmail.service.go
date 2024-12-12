@@ -3,8 +3,8 @@ package services
 import (
 	"fmt"
 
-	"github.com/patrickdmatos/user-module-go/internal/database"
-	"github.com/patrickdmatos/user-module-go/internal/models"
+	"github.com/patrickdmatos/api-shared-library-go/database"
+	"github.com/patrickdmatos/api-shared-library-go/models"
 )
 
 // Verifica se o email já está cadastrado no banco de dados

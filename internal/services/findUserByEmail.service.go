@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/patrickdmatos/user-module-go/internal/database"
-	"github.com/patrickdmatos/user-module-go/internal/models"
+	"github.com/patrickdmatos/api-shared-library-go/database"
+	"github.com/patrickdmatos/api-shared-library-go/models"
 )
 
 func GetUserByEmail(email string) (*models.User, error) {

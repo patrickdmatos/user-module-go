@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/patrickdmatos/user-module-go/internal/database"
+	"github.com/patrickdmatos/api-shared-library-go/database"
 	"github.com/patrickdmatos/user-module-go/internal/handlers"
 	"github.com/patrickdmatos/user-module-go/middleware"
 )
@@ -16,7 +16,7 @@ func main() {
 	// Conectar ao banco de dados
 	_, err := database.ConnectToDatabase()
 	if err != nil {
-		fmt.Println("Não foi possível conectar ao banco de dados: %v", err)
+		panic(err)
 	}
 
 	// Rotas públicas
