@@ -6,8 +6,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/patrickdmatos/api-shared-library-go/database"
+	"github.com/patrickdmatos/api-shared-library-go/middleware"
 	"github.com/patrickdmatos/user-module-go/internal/handlers"
-	"github.com/patrickdmatos/user-module-go/middleware"
 )
 
 func main() {
@@ -27,7 +27,8 @@ func main() {
 	app.Post("/login", handlers.Login)
 
 	// Rota protegida
-	app.Get("/userInfos", middleware.Protect(), handlers.GetUserInfos)
+	app.Use(middleware.Protect())
+	app.Get("/userInfos", handlers.GetUserInfos)
 
 	// Obtenha a porta da variável de ambiente ou defina uma padrão
 	 port := os.Getenv("PORT")

@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/patrickdmatos/api-shared-library-go/middleware"
+	"github.com/patrickdmatos/api-shared-library-go/models"
 	"github.com/patrickdmatos/user-module-go/internal/services"
 )
 
@@ -64,19 +64,14 @@ func Login(c *fiber.Ctx) error {
 // Função para obter as informações do usuário (somente para rotas protegidas)
 func GetUserInfos(c *fiber.Ctx) error {
    	// Pegue o email do usuário a partir do contexto com type assertion
-	claims, err := middleware.ExtractClaims(c)
-	if err != nil {
-		return c.Status(fiber.StatusUnauthorized).SendString("Token inválido")
-	}
+	claims:= c.Locals("claims").(*models.Claims)
 
 	// Agora você pode acessar claims.Username, claims.Email, etc.
 	return c.JSON(fiber.Map{
+		"id": claims.ID,
 		"username": claims.Username,
 		"email":    claims.Email,
 		"fullName": claims.FullName,
 	})
-
-	// Retorna os dados do usuário
-	return c.JSON(user)
 }
 
