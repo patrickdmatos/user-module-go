@@ -3,8 +3,8 @@ package services
 import (
 	"fmt"
 
-	"github.com/patrickdmatos/api-shared-library-go/database"
-	"github.com/patrickdmatos/api-shared-library-go/models"
+	"github.com/patrickdmatos/api-all-in-go/database"
+	"github.com/patrickdmatos/api-all-in-go/models"
 	"golang.org/x/crypto/bcrypt"
 )
 

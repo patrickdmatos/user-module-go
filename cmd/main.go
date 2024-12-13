@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/patrickdmatos/api-shared-library-go/database"
-	"github.com/patrickdmatos/api-shared-library-go/middleware"
+	"github.com/patrickdmatos/api-all-in-go/database"
+	"github.com/patrickdmatos/api-all-in-go/middleware"
 	"github.com/patrickdmatos/user-module-go/internal/handlers"
 )
 

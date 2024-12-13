@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/patrickdmatos/api-shared-library-go/database"
-	"github.com/patrickdmatos/api-shared-library-go/models"
+	"github.com/patrickdmatos/api-all-in-go/database"
+	"github.com/patrickdmatos/api-all-in-go/models"
 )
 
 func GetUserByEmail(email string) (*models.User, error) {

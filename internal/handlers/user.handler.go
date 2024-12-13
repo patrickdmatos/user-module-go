@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/patrickdmatos/api-shared-library-go/models"
+	"github.com/patrickdmatos/api-all-in-go/models"
 	"github.com/patrickdmatos/user-module-go/internal/services"
 )
 

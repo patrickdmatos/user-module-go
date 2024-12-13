@@ -3,7 +3,7 @@ package services
 import (
 	"errors"
 
-	"github.com/patrickdmatos/api-shared-library-go/auth"
+	"github.com/patrickdmatos/api-all-in-go/auth"
 )
 
 func AutenticateUser(email, password string) (string, error) {
