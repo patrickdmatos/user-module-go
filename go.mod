@@ -4,6 +4,8 @@ go 1.23
 
 require github.com/gofiber/fiber/v2 v2.52.5
 
+require github.com/patrickdmatos/api-all-in-go v0.1.3
+
 require (
 	github.com/golang-jwt/jwt/v4 v4.5.1 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
@@ -18,7 +20,6 @@ require (
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
-	github.com/patrickdmatos/api-all-in-go v0.1.3
 	golang.org/x/sync v0.10.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
 )
