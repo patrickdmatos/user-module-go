@@ -2,8 +2,6 @@ module github.com/patrickdmatos/user-module-go
 
 go 1.23
 
-replace github.com/patrickdmatos/api-shared-library-go => ../api-shared-library-go
-
 require github.com/gofiber/fiber/v2 v2.52.5
 
 require (
