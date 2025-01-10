@@ -71,7 +71,7 @@ func GetUserInfos(c *fiber.Ctx) error {
 		"id": claims.ID,
 		"username": claims.Username,
 		"email":    claims.Email,
-		"fullName": claims.FullName,
+		"fullName": claims.Name,
 	})
 }
 
