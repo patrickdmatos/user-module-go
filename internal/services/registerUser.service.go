@@ -21,7 +21,7 @@ func RegisterUser(username, name, email, password string) error {
 		return err
 	}
 
-	if emailAlreadyUsed {
+	if emailAlreadyUsed == true {
 		return fmt.Errorf("o email já está cadastrado")
 	}
 
